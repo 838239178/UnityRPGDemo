@@ -1,0 +1,26 @@
+[title=Mage_begin]
+法师:你来了
+[save start=Mage_normal_begin break=Mage_normal_end data=q0 mod=-1]
+[save start=Mage_off_begin break=Mage_off_end data=q0 mod=0]
+[save start=Mage_normal_begin break=Mage_normal_end data=q0 mod=1]
+[title=Mage_end]
+
+[title=Mage_normal_begin]
+法师:我犯了一个错误
+法师:<color=red>南部森林</color>里的魔物因此暴走了
+法师:[question=q0]能不能帮我击退魔物，我会给你些好东西
+[choice]交给我吧[newtalk start=q0c0_begin break=q0c0_end]
+[choice]我才不要[newtalk start=q0c1_begin break=q0c1_end]
+[title=Mage_normal_end]
+
+[title=Mage_off_begin]
+法师:你处理好了吗，魔物平息了吗
+[title=Mage_off_end]
+
+[title=q0c0_begin]
+法师:很好，我相信魔物会平静的
+[title=q0c0_end]
+
+[title=q0c1_begin]
+法师:如果你反悔了就来找我
+[title=q0c1_end]
