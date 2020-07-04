@@ -26,25 +26,8 @@ public class AttackTarget : MonoBehaviour
         turnSys = GameObject.Find("TurnSystem").GetComponent<TurnSystem>();
     }
 
-    public bool HitBySkill(GameObject target, string skillName)
+    public bool Hit(GameObject target, SkillCell skill = null)
     {
-        UnitStats ownerStat = owner.GetComponent<UnitStats>();
-
-        if(ownerStat.realMP < MPCost)
-        {
-            //TO DO: 发送提示信息
-
-            return false;
-        }
-        
-        //TO DO: 根据技能名读取技能信息、技能动画
-
-        StartCoroutine("TurnWait");
-        return true;
-    }
-    public bool Hit(GameObject target)
-    {
-        
         atkAnimName = this.owner.name + "_atk";
         UnitStats ownerStats = owner.GetComponent<UnitStats>();
         UnitStats targetStats = target.GetComponent<UnitStats>();
@@ -52,13 +35,18 @@ public class AttackTarget : MonoBehaviour
         if(ownerStats.realMP >= MPCost)
         {
             float currentAtkMultipilier = (Random.value * (maxAtkMultiplier - minAtkMultiplier)) + minAtkMultiplier;
-            float damage = currentAtkMultipilier * (isMagic ? ownerStats.INT : ownerStats.ATK);
+            float damage = currentAtkMultipilier * (isMagic ? ownerStats.INT+float.Parse(skill.Data.damage) : ownerStats.ATK);
             damage = Mathf.Max(0, damage - targetStats.DEF * .25f);
             //播放伤害信息
             messageBox.SetActive(true);
             messageBox.GetComponent<MessageManager>().SetAtkText(owner.name, target.name, damage,isMagic);
             //播放攻击动画  
             ownerStats.anim.Play(atkAnimName);
+            if (isMagic)
+            {
+                skill.audio.Play();
+                Debug.Log("skill sound played");
+            }
             StartCoroutine(ReceiveDamageWait(targetStats, damage));
             ownerStats.realMP -= MPCost;
             StartCoroutine("TurnWait");
@@ -67,10 +55,12 @@ public class AttackTarget : MonoBehaviour
         return false;
     }
 
-    public void Escape()
+    public void Escape(GameObject target)
     {
         float f = Random.Range(1f, 10f);
-        if (f < escapeChance)
+        float additionalChance = owner.GetComponent<UnitStats>().SPD / target.GetComponent<UnitStats>().SPD;
+
+        if (f < escapeChance*additionalChance)
             turnSys.SetEscape();
         else
         {

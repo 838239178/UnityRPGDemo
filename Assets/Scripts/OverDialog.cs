@@ -12,7 +12,6 @@ public class OverDialog : MonoBehaviour
     {
         Text dialogText = this.transform.GetChild(1).GetComponent<Text>();
         Button dialogBtn = this.transform.GetChild(0).GetComponent<Button>();
-        dialogBtn.onClick.AddListener(delegate { OverButtonClick(); });
         if(onEnableStatus == GameStatus.Win)
         {
             dialogText.text = "Victory";
@@ -40,11 +39,4 @@ public class OverDialog : MonoBehaviour
         GameObject playerParty = GameObject.Find("PlayerParty");
         playerParty.GetComponent<PlayerStat>().money -= 100;
     }
-
-    public void OverButtonClick()
-    {
-        SceneManager.LoadScene("Town");
-    }
-
-
 }

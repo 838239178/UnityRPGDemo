@@ -71,8 +71,8 @@ namespace NodeEditorFramework.Standard
 			EditorLoadingControl.justLeftPlayMode += NormalReInit;
 			EditorLoadingControl.justOpenedNewScene -= NormalReInit;
 			EditorLoadingControl.justOpenedNewScene += NormalReInit;
-			SceneView.onSceneGUIDelegate -= OnSceneGUI;
-			SceneView.onSceneGUIDelegate += OnSceneGUI;
+			SceneView.duringSceneGui -= OnSceneGUI;
+			SceneView.duringSceneGui += OnSceneGUI;
 
             EditorApplication.LockReloadAssemblies();
         }
@@ -88,7 +88,7 @@ namespace NodeEditorFramework.Standard
 			NodeEditor.ClientRepaints -= Repaint;
 			EditorLoadingControl.justLeftPlayMode -= NormalReInit;
 			EditorLoadingControl.justOpenedNewScene -= NormalReInit;
-			SceneView.onSceneGUIDelegate -= OnSceneGUI;
+			SceneView.duringSceneGui -= OnSceneGUI;
 
 			// Clear Cache
 			canvasCache.ClearCacheEvents();

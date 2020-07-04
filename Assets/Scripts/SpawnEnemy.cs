@@ -3,15 +3,22 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+/// <summary>
+///  require NPC or System Cycle placement to place enemy. 
+/// </summary>
 public class SpawnEnemy : MonoBehaviour
 {
     public GameObject enemyEncounter;
-
-    private void Awake()
+    public ChangeScene levelLoader;
+    [SerializeField]
+    private GameObject[] enemyPerfabs;  
+    
+    public void PutEnemyOnPosition(string enemyName, Vector2 postion)
     {
-        enemyEncounter = GameObject.Find("EnemyEncounter");
+        //TO DO: radom on enemy perfabs and change its parents to enemyEncounter
+        
     }
-
+    
     private void OnTriggerEnter2D(Collider2D collision)
     {
 
@@ -23,7 +30,7 @@ public class SpawnEnemy : MonoBehaviour
 
         if(collision.tag == "Player")
         {
-            SceneManager.LoadScene("Battle");
+            levelLoader.LoadNextScene("Battle");
         }
     }
 }

@@ -1,23 +1,24 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
 public class ChangeScene : MonoBehaviour
 {
+    [SerializeField] Animator anim;
+    public float translationTime = 1f;
+
     public void LoadNextScene(string sceneName)
     {
-        SceneManager.LoadScene(sceneName);
-    }
-    // Start is called before the first frame update
-    void Start()
-    {
-        
+        StartCoroutine(LoadScene(sceneName));
     }
 
-    // Update is called once per frame
-    void Update()
+    IEnumerator LoadScene(string sceneName)
     {
-        
+        anim.SetTrigger("start");
+        yield return new WaitForSeconds(translationTime);
+        SceneManager.LoadScene(sceneName);
     }
+
 }

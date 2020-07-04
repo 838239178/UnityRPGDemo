@@ -14,7 +14,6 @@ class SelectUnit : MonoBehaviour
     private GameObject skillLayer;
 
     private TurnSystem turnSys;
-
     private void Awake()
     {
         SceneManager.sceneLoaded += OnSceneLoad;
@@ -55,6 +54,7 @@ class SelectUnit : MonoBehaviour
     public void SetCurrentUnit(GameObject unit)
     {
         this.currentUnit = unit;
+        this.skillLayer.GetComponent<SkillLayer>().CreateSkillMenu(unit.GetComponent<UnitStats>());
         this.actionsMenu.SetActive(true);
         this.enemyUnitsMenu.SetActive(false);
         this.skillLayer.SetActive(false);
@@ -79,10 +79,17 @@ class SelectUnit : MonoBehaviour
 
     } 
 
-    public void SelectSkill(string name)
+    public void SelectSkill(SkillCell skl)
     {
         //TO DO: 根据转递回来的参数设置PlayerUnitAction中的技能名
-        this.currentUnit.GetComponent<PlayerUnitAction>().skillName = name;
+        this.currentUnit.GetComponent<PlayerUnitAction>().useSkill = skl;
+        if(this.currentUnit.GetComponent<UnitStats>().realMP < float.Parse(skl.Data.cost))
+        {
+            Debug.Log("MP is not enough");
+            return;
+        }
+        this.skillLayer.SetActive(false);
+        this.SelectAction(ActionType.MagicalAttack);
     }
 
     public void AttackEnemy(GameObject target)

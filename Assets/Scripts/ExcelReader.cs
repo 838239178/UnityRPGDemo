@@ -5,13 +5,18 @@ using System.Data;
 using System.IO;
 using ExcelDataReader;
 
+public interface IDataInitialization
+{
+    void Initial(DataRow collect);
+}
+
+
 /// <summary>
 /// 读取excel表格的数据，泛型类需有无参构造函数并且实现接口IDataInitialization
 /// </summary>
 /// <typeparam name="T">适用于Data.cs中的类</typeparam>
 public static class ExcelReader<T> where T:  IDataInitialization, new()
 {
-    
     public static T[] ReadDataExcel(string filePath) 
     {
         List<T> list = new List<T>();

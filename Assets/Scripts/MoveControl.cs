@@ -2,7 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Animations;
+using UnityEngine.SceneManagement;
 
+/// <summary>
+/// 玩家移动控制器，按格子移动，采用点碰撞检测
+/// </summary>
 public class MoveControl : MonoBehaviour
 {
     [SerializeField]
@@ -41,6 +45,7 @@ public class MoveControl : MonoBehaviour
     private void OnDestroy()
     {
         playerStat.scenePosition = this.transform.position;
+        playerStat.sceneName = SceneManager.GetActiveScene().name;
     }
 
     void Update()

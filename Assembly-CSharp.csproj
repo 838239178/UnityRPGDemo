@@ -87,12 +87,15 @@
     <Compile Include="Assets\Scripts\AddButtonCallback.cs" />
     <Compile Include="Assets\Scripts\Arrow.cs" />
     <Compile Include="Assets\Scripts\AttackTarget.cs" />
+    <Compile Include="Assets\Scripts\AudioPlayer.cs" />
     <Compile Include="Assets\Scripts\ChangeScene.cs" />
     <Compile Include="Assets\Scripts\CreatEnemyMenuItem.cs" />
-    <Compile Include="Assets\Scripts\Data.cs" />
+    <Compile Include="Assets\Scripts\DataLoader.cs" />
     <Compile Include="Assets\Scripts\DialogButton.cs" />
+    <Compile Include="Assets\Scripts\EnemyEncounter.cs" />
     <Compile Include="Assets\Scripts\EnemyUnitAction.cs" />
     <Compile Include="Assets\Scripts\ExcelReader.cs" />
+    <Compile Include="Assets\Scripts\GameData.cs" />
     <Compile Include="Assets\Scripts\KillEnemy.cs" />
     <Compile Include="Assets\Scripts\MessageManager.cs" />
     <Compile Include="Assets\Scripts\MoveControl.cs" />
@@ -103,6 +106,7 @@
     <Compile Include="Assets\Scripts\ShowUnitHP.cs" />
     <Compile Include="Assets\Scripts\ShowUnitMP.cs" />
     <Compile Include="Assets\Scripts\ShowUnitStat.cs" />
+    <Compile Include="Assets\Scripts\SkillCell.cs" />
     <Compile Include="Assets\Scripts\SkillLayer.cs" />
     <Compile Include="Assets\Scripts\SpawnEnemy.cs" />
     <Compile Include="Assets\Scripts\StartBattle.cs" />

@@ -3,6 +3,7 @@
 [save start=Mage_normal_begin break=Mage_normal_end data=q0 mod=-1]
 [save start=Mage_off_begin break=Mage_off_end data=q0 mod=0]
 [save start=Mage_normal_begin break=Mage_normal_end data=q0 mod=1]
+[save start=Mage_task_accomplish_begin break=Mage_task_accomplish_end data=q0 mod=2]
 [title=Mage_end]
 
 [title=Mage_normal_begin]
@@ -16,6 +17,10 @@
 [title=Mage_off_begin]
 法师:你处理好了吗，魔物平息了吗
 [title=Mage_off_end]
+
+[title=Mage_task_accomplish_begin]
+法师:干得漂亮，这件宝物归你了
+[title=Mage_task_accomplish_end]
 
 [title=q0c0_begin]
 法师:很好，我相信魔物会平静的

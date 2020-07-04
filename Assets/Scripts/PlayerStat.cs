@@ -5,8 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class PlayerStat : MonoBehaviour
 {
-    public string name;
+    public string userName;
     public uint money;
+    public string sceneName;
     public Vector2 scenePosition;
 
     private void Awake()

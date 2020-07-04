@@ -12,10 +12,10 @@ public enum GameStatus
 }
 public class TurnSystem : MonoBehaviour
 {
-    [SerializeField]
-    private GameObject playerParty;
-    [SerializeField]
-    private GameObject enemyEncounter;
+
+    public GameObject playerParty;
+    public GameObject enemyEncounter;
+
     [SerializeField]
     private GameObject overDialog;
 

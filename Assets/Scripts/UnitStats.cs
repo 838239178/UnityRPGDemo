@@ -8,7 +8,7 @@ public class UnitStats : MonoBehaviour, IComparable
     public Animator anim; 
     public Sprite unitFace;
     public int NextActTurn;
-    public int PositionNo;  
+    public int PositionNo;                  //战斗时的排位顺序 ： 0-5前卫 6-10中卫 11-15后卫
     
     [HideInInspector]
     public float realHP;
@@ -28,6 +28,9 @@ public class UnitStats : MonoBehaviour, IComparable
     public float DEF;
     [Range(0, 256)]
     public float SPD;
+
+    [Header("单位拥有的技能ID")]
+    public uint[] skill;
 
     private bool dead = false;
 

@@ -16,7 +16,7 @@ public class PlayerUnitAction : MonoBehaviour
     [HideInInspector]
     public ActionType actionType;
     [HideInInspector]
-    public string skillName;
+    public SkillCell useSkill;
 
     private AttackTarget attacker;
     
@@ -33,12 +33,17 @@ public class PlayerUnitAction : MonoBehaviour
     private void MagicalAttack(GameObject target)
     {
         //TO DO: 根据技能名从技能列表中提取相关信息并提供给attacker
-        attacker.Hit(target);
+        attacker.isMagic = true;
+        attacker.MPCost = float.Parse(useSkill.Data.cost);
+        if(!attacker.Hit(target, useSkill))
+        {
+            Debug.Log(this.name + "'s MP is not enough");
+        }
     }
 
-    private void Escape()
+    private void Escape(GameObject target)
     {
-        attacker.Escape();
+        attacker.Escape(target);
     }
 
     public void Act(GameObject target)
@@ -54,7 +59,7 @@ public class PlayerUnitAction : MonoBehaviour
                 this.MagicalAttack(target);
                 break;
             case ActionType.Escape:
-                this.Escape();
+                this.Escape(target);
                 break;
         }
     }
