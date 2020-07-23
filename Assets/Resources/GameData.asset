@@ -12,4 +12,205 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ef061bcd4e9b724bad2b5f3f7c119b2, type: 3}
   m_Name: GameData
   m_EditorClassIdentifier: 
-  skillData: []
+  skillData:
+  - ID: 0
+    iconAtlas: Icons/SkillIcons
+    icon: icon_35
+    sound: music/thunder
+    skillName: "\u95EA\u51FB"
+    damage: 10
+    cost: 6
+    describe: "\u53EC\u5524\u4E00\u9053\u95EA\u7535\uFF0C\u7ED9\u4E88\u654C\u4EBA\u6CD5\u672F\u4F24\u5BB3"
+  equipData:
+  - ID: 0
+    itemName: "\u6728\u76FE"
+    icon: {fileID: -732356172534689064, guid: 9c5faba780e4365489b0f45800e7268a, type: 3}
+    value: 15
+    itemHeiled: 1
+    effect:
+      HP: 20
+      MP: 0
+      ATK: 0
+      DEF: 5
+      INT: 0
+      SPD: -2
+    describe: "\u4E00\u4E2A\u666E\u901A\u7684\u6728\u76FE"
+    type: 3
+    quality: 0
+    levelRequire: 0
+  - ID: 1
+    itemName: "\u6728\u76FE+1"
+    icon: {fileID: 0}
+    value: 20
+    itemHeiled: 1
+    effect:
+      HP: 30
+      MP: 0
+      ATK: 0
+      DEF: 7
+      INT: 0
+      SPD: -2
+    describe: "\u4E00\u4E2A\u666E\u901A\u7684\u6728\u76FE\uFF0C\u5F3A\u5316\u540E\u53D8\u5F97\u66F4\u52A0\u7262\u56FA\u4E86"
+    type: 3
+    quality: 0
+    levelRequire: 0
+  - ID: 2
+    itemName: "\u6728\u76FE+2"
+    icon: {fileID: 0}
+    value: 25
+    itemHeiled: 1
+    effect:
+      HP: 40
+      MP: 0
+      ATK: 0
+      DEF: 9
+      INT: 0
+      SPD: -2
+    describe: "\u4E00\u4E2A\u666E\u901A\u7684\u6728\u76FE\uFF0C\u5F3A\u5316\u540E\u53D8\u5F97\u66F4\u52A0\u7262\u56FA\u4E86"
+    type: 3
+    quality: 0
+    levelRequire: 0
+  - ID: 3
+    itemName: "\u6728\u76FE+3"
+    icon: {fileID: 0}
+    value: 30
+    itemHeiled: 1
+    effect:
+      HP: 50
+      MP: 0
+      ATK: 0
+      DEF: 11
+      INT: 0
+      SPD: -2
+    describe: "\u4E00\u4E2A\u666E\u901A\u7684\u6728\u76FE\uFF0C\u5F3A\u5316\u540E\u53D8\u5F97\u66F4\u52A0\u7262\u56FA\u4E86"
+    type: 3
+    quality: 0
+    levelRequire: 0
+  - ID: 4
+    itemName: "\u6728\u76FE+4"
+    icon: {fileID: 0}
+    value: 35
+    itemHeiled: 1
+    effect:
+      HP: 60
+      MP: 0
+      ATK: 0
+      DEF: 13
+      INT: 0
+      SPD: -2
+    describe: "\u4E00\u4E2A\u666E\u901A\u7684\u6728\u76FE\uFF0C\u5F3A\u5316\u540E\u53D8\u5F97\u66F4\u52A0\u7262\u56FA\u4E86"
+    type: 3
+    quality: 0
+    levelRequire: 0
+  - ID: 5
+    itemName: "\u6728\u76FE+5"
+    icon: {fileID: 0}
+    value: 40
+    itemHeiled: 1
+    effect:
+      HP: 70
+      MP: 0
+      ATK: 0
+      DEF: 15
+      INT: 0
+      SPD: -2
+    describe: "\u4E00\u4E2A\u666E\u901A\u7684\u6728\u76FE\uFF0C\u5F3A\u5316\u540E\u53D8\u5F97\u66F4\u52A0\u7262\u56FA\u4E86"
+    type: 3
+    quality: 0
+    levelRequire: 0
+  - ID: 6
+    itemName: "\u6728\u5251"
+    icon: {fileID: 0}
+    value: 15
+    itemHeiled: 1
+    effect:
+      HP: 0
+      MP: 0
+      ATK: 7
+      DEF: 2
+      INT: 0
+      SPD: -1
+    describe: "\u4E00\u628A\u666E\u901A\u7684\u6728\u5251"
+    type: 2
+    quality: 0
+    levelRequire: 0
+  - ID: 7
+    itemName: "\u6728\u5251+1"
+    icon: {fileID: 0}
+    value: 20
+    itemHeiled: 1
+    effect:
+      HP: 0
+      MP: 0
+      ATK: 9
+      DEF: 2
+      INT: 0
+      SPD: -1
+    describe: "\u4E00\u628A\u666E\u901A\u7684\u6728\u5251\uFF0C\u5F3A\u5316\u540E\u53D8\u5F97\u66F4\u52A0\u9510\u5229\u4E86"
+    type: 2
+    quality: 0
+    levelRequire: 0
+  - ID: 8
+    itemName: "\u6728\u5251+2"
+    icon: {fileID: 0}
+    value: 25
+    itemHeiled: 1
+    effect:
+      HP: 0
+      MP: 0
+      ATK: 11
+      DEF: 2
+      INT: 0
+      SPD: -1
+    describe: "\u4E00\u628A\u666E\u901A\u7684\u6728\u5251\uFF0C\u5F3A\u5316\u540E\u53D8\u5F97\u66F4\u52A0\u9510\u5229\u4E86"
+    type: 2
+    quality: 0
+    levelRequire: 0
+  - ID: 9
+    itemName: "\u6728\u5251+3"
+    icon: {fileID: 0}
+    value: 30
+    itemHeiled: 1
+    effect:
+      HP: 0
+      MP: 0
+      ATK: 13
+      DEF: 2
+      INT: 0
+      SPD: -1
+    describe: "\u4E00\u628A\u666E\u901A\u7684\u6728\u5251\uFF0C\u5F3A\u5316\u540E\u53D8\u5F97\u66F4\u52A0\u9510\u5229\u4E86"
+    type: 2
+    quality: 0
+    levelRequire: 0
+  - ID: 10
+    itemName: "\u6728\u5251+4"
+    icon: {fileID: 0}
+    value: 35
+    itemHeiled: 1
+    effect:
+      HP: 0
+      MP: 0
+      ATK: 15
+      DEF: 2
+      INT: 0
+      SPD: -1
+    describe: "\u4E00\u628A\u666E\u901A\u7684\u6728\u5251\uFF0C\u5F3A\u5316\u540E\u53D8\u5F97\u66F4\u52A0\u9510\u5229\u4E86"
+    type: 2
+    quality: 0
+    levelRequire: 0
+  - ID: 11
+    itemName: "\u6728\u5251+5"
+    icon: {fileID: 0}
+    value: 40
+    itemHeiled: 1
+    effect:
+      HP: 0
+      MP: 0
+      ATK: 17
+      DEF: 2
+      INT: 0
+      SPD: -1
+    describe: "\u4E00\u628A\u666E\u901A\u7684\u6728\u5251\uFF0C\u5F3A\u5316\u540E\u53D8\u5F97\u66F4\u52A0\u9510\u5229\u4E86"
+    type: 2
+    quality: 0
+    levelRequire: 0

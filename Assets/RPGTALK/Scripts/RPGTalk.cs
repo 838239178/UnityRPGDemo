@@ -2068,22 +2068,24 @@ public class RPGTalk : MonoBehaviour {
                 OnEndTalk ();
             }
 
-
-            StartCoroutine(GoBackIsPlaying());
-
-            if (!shouldStayOnScreen) {
-                textUI.Enabled(false);
-                if (dialoger) {
-                    if (dialogerObj) {
-                        dialogerUI.Enabled(false);
-                    }
-                }
-                for (int i = 0; i < showWithDialog.Length; i++) {
-                    showWithDialog [i].SetActive (false);
-                }
-            }
+            
+            
+            StartCoroutine(GoBackIsPlaying()); 
 
             callback.Invoke();
+
+            StartCoroutine(DisableDialog());
+            //if (!shouldStayOnScreen) {
+            //    textUI.Enabled(false);
+            //    if (dialoger) {
+            //        if (dialogerObj) {
+            //            dialogerUI.Enabled(false);
+            //        }
+            //    }
+            //    for (int i = 0; i < showWithDialog.Length; i++) {
+            //        showWithDialog [i].SetActive (false);
+            //    }
+            //}
 
 
             //if we want to go back to the original talk lines
@@ -2098,6 +2100,28 @@ public class RPGTalk : MonoBehaviour {
         }
 
         
+    }
+
+    //等待一点点时间，让UI的结束动画可以放完
+    IEnumerator DisableDialog()
+    {
+        yield return new WaitForSeconds(0.2f);
+        if (!shouldStayOnScreen)
+        {
+            textUI.Enabled(false);
+            if (dialoger)
+            {
+                if (dialogerObj)
+                {
+                    dialogerUI.Enabled(false);
+                }
+            }
+            for (int i = 0; i < showWithDialog.Length; i++)
+            {
+                showWithDialog[i].SetActive(false);
+            }
+        }
+
     }
 
     //Wait a frame to make the isPlaying false, so we try not to play a area and pass a talk at the same time

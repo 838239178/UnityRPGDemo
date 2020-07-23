@@ -3,7 +3,7 @@
 [save start=Mage_normal_begin break=Mage_normal_end data=q0 mod=-1]
 [save start=Mage_off_begin break=Mage_off_end data=q0 mod=0]
 [save start=Mage_normal_begin break=Mage_normal_end data=q0 mod=1]
-[save start=Mage_task_accomplish_begin break=Mage_task_accomplish_end data=q0 mod=2]
+[save start=Mage_task_accomplish_begin break=Mage_task_accomplish_end data=q0 mod=-9008]
 [title=Mage_end]
 
 [title=Mage_normal_begin]

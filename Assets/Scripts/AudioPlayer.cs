@@ -5,8 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class AudioPlayer : MonoBehaviour
 {
-    [SerializeField]
-    private AudioSource audio;
+    public AudioSource audio;   
 
     [SerializeField]
     private AudioClip clip;
@@ -18,6 +17,13 @@ public class AudioPlayer : MonoBehaviour
         audio.clip = clip;
     }
 
+    private void OnSceneLoad(Scene scene, LoadSceneMode mode)
+    {
+        ChangeMusic(scene.name + "_mic");
+    }    
+
+
+
     public void ChangeMusic(string path)
     {
         //TODO : load audio clip
@@ -28,9 +34,7 @@ public class AudioPlayer : MonoBehaviour
         audio.Play();
         Debug.Log(clip.name + " loaded success");
     }
-
-    private void OnSceneLoad(Scene scene, LoadSceneMode mode)
-    {
-        ChangeMusic(scene.name + "_mic");
-    }
 }
+
+
+

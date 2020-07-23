@@ -19,6 +19,7 @@ public class Skill : IDataInitialization
     public string skillName; 
     public string damage;
     public string cost;
+    [TextArea]
     public string describe;
     //行： 0-ID, 1-NAME, 2-COST, 3-DAMAGE, 4-DESCRIBE, 5-ICON Atlas, 6-ICON, 7-SOUND
     public void Initial(DataRow collect)
@@ -38,4 +39,5 @@ public class Skill : IDataInitialization
 public class GameData : ScriptableObject
 {
     public Skill[] skillData;
+    public ItemEquip[] equipData;
 }

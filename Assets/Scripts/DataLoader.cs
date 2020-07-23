@@ -11,7 +11,10 @@ public class DataLoader : MonoBehaviour
         if (dataAsset == null)
             Debug.LogError("GameData load failed");
         dataAsset.skillData = ExcelReader<Skill>.ReadDataExcel("Assets/excle/skill.xlsx");
+        dataAsset.equipData = ExcelReader<ItemEquip>.ReadDataExcel("Assets/excle/equip.xlsx");
         if (dataAsset.skillData == null)
-            Debug.LogError("Excle load failed");
+            Debug.LogError("skill data load failed");
+        if (dataAsset.equipData == null)
+            Debug.LogError("equip data load failed");
     }
 }
